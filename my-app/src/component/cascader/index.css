@@ -1,0 +1,22 @@
+.bb {
+    border: 1px solid red;
+    height: 20px;
+    width: 40px;
+}
+
+.innerContainer {
+    border: 1px solid blue;
+    height: 100px;
+    overflow-y: scroll;
+    display: inline-block;
+    float: left;
+    padding: 5px;
+}
+
+.option {
+    text-align: left;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
