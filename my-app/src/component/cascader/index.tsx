@@ -94,7 +94,6 @@ export default function Cascader(props: any) {
       if (domRef.current?.contains(e.target as Node)) {
         return;
       }
-      console.log(trueOptions);
       setShowOptions(deepCopyArray(trueOptions));
       setShow(false);
       setPreShow(false);
@@ -129,7 +128,6 @@ export default function Cascader(props: any) {
                   if (option.children.length == 0) {
                     setShow(false);
                     setPreShow(false);
-                    console.log("setTrueOptions")
                     setTrueOptions(deepCopyArray(showOptions));
                     setMessage(genNewMessgae(showOptions));
                   }
