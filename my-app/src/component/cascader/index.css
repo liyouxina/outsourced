@@ -2,7 +2,8 @@
     box-sizing: border-box;
     border: 1px solid #d9d9d9;
     height: 32px;
-    width: 182px;
+    width: 100%;
+    max-width: 200px;
     border-radius: 2px;
     transition: all .3s cubic-bezier(.645,.045,.355,1);
     cursor : pointer;
@@ -18,7 +19,16 @@
     height: 100px;
     overflow-y: scroll;
     display: inline-block;
-    float: left;
+}
+
+.outer-container {
+    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+    overflow: hidden;
+}
+
+.all-container {
+    position: absolute;
+    text-align: left;
 }
 
 .option {
@@ -39,4 +49,9 @@
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+.hidden {
+    display: none;
+
 }

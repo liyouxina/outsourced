@@ -19,27 +19,21 @@ function App() {
         name: "1",
         value: "2",
         children: [],
-        choosen: false
       }],
-      choosen: false
     },{
       name: "hangzhou",
       value: "hangzhou",
       children: [{
         name: "yuhang",
         value: "yuhang",
-        children: [],
-        choosen: false
+        children: []
       }],
-      choosen: false
     }],
-    choosen: false
   },
   {
     name: "jiangsu",
     value: "jiangsu",
     children: [],
-    choosen: false
   }];
   return (
     <div className="App">
