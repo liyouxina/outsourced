@@ -61,16 +61,14 @@ export default function Cascader(props: any) {
   const [show, setShow] = useState(false);
   const [message, setMessage] = useState<string>();
   const [forceChange, setForceChange] = useState<number>(0);
-  const [trueOptions, setTrueOptions] = useState<Option[]>(((props) => {return props.options;})(props));
   const [showOptions, setShowOptions] = useState<Option[]>(((props) => {return props.options;})(props));
+  const [trueOptions, setTrueOptions] = useState<Option[]>(((showOptions) => {return deepCopyArray(showOptions);})(showOptions));
   const domRef = useRef<HTMLDivElement>(null);
   const showCascader = () => {
     if (!show) {
       return [];
     }
     let layer:Option[] = [];
-    console.log("preshow")
-    console.log(preShow)
     if (!preShow) {
       layer = trueOptions;
       setPreShow(true);
@@ -96,6 +94,8 @@ export default function Cascader(props: any) {
       if (domRef.current?.contains(e.target as Node)) {
         return;
       }
+      console.log(trueOptions);
+      setShowOptions(deepCopyArray(trueOptions));
       setShow(false);
       setPreShow(false);
     };
@@ -104,7 +104,6 @@ export default function Cascader(props: any) {
       document.removeEventListener("mousedown", handleClickOutSide);
     };
   }, []);
-  console.log("render")
   return (
     <div ref={domRef}>
       <div className="hidden">{forceChange}</div>
@@ -120,7 +119,6 @@ export default function Cascader(props: any) {
                   // if (option.children.length != 0) {
                   //   return;
                   // }
-                  console.log("click")
                   for (let oneOption of optionsArray) {
                     oneOption.choosen = false;
                   }
@@ -131,6 +129,7 @@ export default function Cascader(props: any) {
                   if (option.children.length == 0) {
                     setShow(false);
                     setPreShow(false);
+                    console.log("setTrueOptions")
                     setTrueOptions(deepCopyArray(showOptions));
                     setMessage(genNewMessgae(showOptions));
                   }
