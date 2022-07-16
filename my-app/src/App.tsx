@@ -9,15 +9,15 @@ interface Option {
   choosen: boolean;
 }
 function App() {
-  let options:Option[] = [{
-    name: "zhejiangasdasdasd",
+  let options = [{
+    name: "zhejiang",
     value: "zhejiang",
     children: [{
       name: "shaoxing",
       value: "shaoxing",
       children: [{
-        name: "zhejiang",
-        value: "zhejiang",
+        name: "1",
+        value: "2",
         children: [],
         choosen: false
       }],
@@ -33,17 +33,11 @@ function App() {
       }],
       choosen: false
     }],
-    choosen: true
+    choosen: false
   },
   {
     name: "jiangsu",
     value: "jiangsu",
-    children: [],
-    choosen: false
-  },
-  {
-    name: "beijing",
-    value: "beijing",
     children: [],
     choosen: false
   }];

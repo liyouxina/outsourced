@@ -1,20 +1,40 @@
-.bb {
-    border: 1px solid red;
-    height: 20px;
-    width: 40px;
+.input-div {
+    box-sizing: border-box;
+    border: 1px solid #d9d9d9;
+    height: 32px;
+    width: 182px;
+    border-radius: 2px;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    cursor : pointer;
 }
 
-.innerContainer {
+.input-div:hover {
+    border: 1px solid #40a9ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, .2);
+}
+
+.inner-container {
     border: 1px solid blue;
     height: 100px;
     overflow-y: scroll;
     display: inline-block;
     float: left;
-    padding: 5px;
 }
 
 .option {
     text-align: left;
+    border: 1px solid black;
+    cursor : pointer;
+    padding: 5px;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+.option:hover {
+    background-color: #40a9ff;
+}
+
+.option-chosen {
+    background-color: rgb(230, 247, 255);
 }
 
 ::-webkit-scrollbar {
