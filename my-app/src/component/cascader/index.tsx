@@ -107,6 +107,9 @@ export default function Cascader(props: any) {
     <div ref={domRef}>
       <div className="hidden">{forceChange}</div>
       <div className={"input-div " + (message == null ? "no-value" : "has-value")} onClick={() => {
+        if (!preShow) {
+          setShowOptions(deepCopyArray(trueOptions));
+        }
         setShow(true);
       }}>{message == null ? "Please select" : message}</div>
       <div className="all-container">
